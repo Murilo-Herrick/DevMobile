@@ -1,0 +1,3 @@
+npx expo init <app-name>
+
+npx expo start
