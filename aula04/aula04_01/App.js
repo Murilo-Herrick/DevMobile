@@ -1,3 +1,4 @@
+import nativeLogo from './assets/NativeLogo.png';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 
@@ -16,7 +17,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={{ uri: 'https://reactnative.dev/img/react_native_logo.png' }}
+        source={nativeLogo}
         style={styles.logo}
       />
 
