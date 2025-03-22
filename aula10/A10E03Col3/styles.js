@@ -1,33 +1,31 @@
 // styles.js  
 import { Platform, StyleSheet, StatusBar } from "react-native";  
 
-// Cria um objeto StyleSheet para definir os estilos  
-export default StyleSheet.create({  
-  // Estilos para o container principal  
+export default StyleSheet.create({    
   container: {  
-    flex: 1, // Preenche todo o espaço disponível  
-    flexDirection: "column", // Organiza os elementos em coluna  
-    alignItems: "center", // Centraliza os elementos horizontalmente  
-    justifyContent: "space-around", // Distribui o espaço igualmente entre os elementos  
-    backgroundColor: "ghostwhite", // Define a cor de fundo  
+    flex: 1, 
+    flexDirection: "column", 
+    alignItems: "center",
+    justifyContent: "space-around", 
+    backgroundColor: "ghostwhite", 
     ...Platform.select({  
-      ios: { paddingTop: 20 }, // Padding top para ios  
-      android: { paddingTop: StatusBar.currentHeight }, // Padding top para Android, considerando a altura da barra de status  
+      ios: { paddingTop: 20 }, 
+      android: { paddingTop: StatusBar.currentHeight }, 
     }),  
   },  
-  // Estilos para as caixas  
+
   box: {  
-    width: 300, // Largura da caixa  
-    height: 100, // Altura da caixa  
-    justifyContent: "center", // Centraliza o conteúdo verticalmente  
-    alignItems: "center", // Centraliza o conteúdo horizontalmente  
-    backgroundColor: "lightgray", // Cor de fundo da caixa  
-    borderStyle: "dashed", // Estilo do borda (trançada)  
-    borderColor: "gray", // Cor da borda  
+    width: 300, 
+    height: 100, 
+    justifyContent: "center", 
+    alignItems: "center",
+    backgroundColor: "lightgray", 
+    borderStyle: "dashed",  
+    borderColor: "gray",
   },  
-  // Estilos para o texto dentro das caixas  
+
   boxText: {  
-    color: "darkslategray", // Cor do texto  
-    fontWeight: "bold", // Peso da fonte (negrito)  
+    color: "darkslategray", 
+    fontWeight: "bold", 
   },  
 });  
