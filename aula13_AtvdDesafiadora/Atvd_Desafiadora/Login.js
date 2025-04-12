@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import {
-  KeyboardAvoidingView,
-  TextInput,
-  TouchableOpacity,
-  Text,
-  View,
-  StyleSheet,
-  Platform,
-  TouchableWithoutFeedback,
-  Keyboard,
-  Alert,
+  View, Text, TextInput, TouchableOpacity, StyleSheet, Alert
 } from 'react-native';
 
 export default function Login({ navigation }) {
@@ -25,34 +16,37 @@ export default function Login({ navigation }) {
   }
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={styles.container}
-      >
-        <View style={styles.loginBox}>
-          <Text style={styles.title}>Bem-vindo!</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Usuário"
-            placeholderTextColor="#aaa"
-            value={usuario}
-            onChangeText={setUsuario}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Senha"
-            placeholderTextColor="#aaa"
-            secureTextEntry
-            value={senha}
-            onChangeText={setSenha}
-          />
-          <TouchableOpacity style={styles.button} onPress={handleLogin}>
-            <Text style={styles.buttonText}>Entrar</Text>
-          </TouchableOpacity>
-        </View>
-      </KeyboardAvoidingView>
-    </TouchableWithoutFeedback>
+    <View style={styles.container}>
+      <View style={styles.loginBox}>
+        <Text style={styles.title}>Bem-vindo!</Text>
+
+        <TextInput
+          style={styles.input}
+          placeholder="Usuário"
+          placeholderTextColor="#aaa"
+          value={usuario}
+          onChangeText={setUsuario}
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Senha"
+          placeholderTextColor="#aaa"
+          secureTextEntry
+          value={senha}
+          onChangeText={setSenha}
+        />
+
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+          <Text style={styles.buttonText}>Entrar</Text>
+        </TouchableOpacity>
+
+        {/* Botão para navegar até a tela de Recuperar Senha */}
+        <TouchableOpacity onPress={() => navigation.navigate('RecuperarSenha')}>
+          <Text style={styles.forgotPasswordText}>Esqueceu a senha?</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
 
@@ -102,5 +96,11 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  forgotPasswordText: {
+    color: '#aaa',
+    textAlign: 'center',
+    marginTop: 10,
+    fontSize: 14,
   },
 });
