@@ -7,6 +7,12 @@ import EditarEstoque from './EditarEstoque';
 import Login from './Login';
 import RecuperarSenha from './RecuperarSenha';
 
+/*
+
+DUPLA: PEDRO MARTINS E MURILO CAMARGO
+
+*/ 
+
 const Stack = createNativeStackNavigator()
 
 export default function App() {
